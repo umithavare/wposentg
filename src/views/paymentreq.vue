@@ -194,7 +194,7 @@ export default defineComponent({
           expireMonth: "0",
           cvc: "",
           isSecureTransaction: true,
-          callbackUrl: "https://localhost:7220/Redirect/Receive",
+          callbackUrl: "http://redirectvue.hstmobil.com.tr:8081/Redirect/Receive",
       } 
     return {
       paymentHtml: "" as any,
