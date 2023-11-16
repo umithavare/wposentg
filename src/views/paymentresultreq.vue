@@ -95,19 +95,18 @@ export default defineComponent({
           await paymentResultRequestService.PaymentResultRequest(
             this.paymentResultRequest
           );
-        // this.paymentHtml = response.data.data.paymentData;
         if (response.data.data.status =="SUCCESS") {
           debugger;
           notify({
             type: "success",
             title: "payment Result Process",
-            text: "Success",
+            text: "Success Ödeme Başarılı",
           });
         } else {
           notify({
             type: "error",
             title: "payment Result Process",
-            text: "Error",
+            text: "Error Ödeme başarısız",
           });
         }
       } catch (error) {
