@@ -102,7 +102,16 @@ export default defineComponent({
             title: "payment Result Process",
             text: "Success Ödeme Başarılı",
           });
-        } else {
+        } 
+        else if(response.data.data.status =="PENDING")
+          {
+            notify({
+            type: "error",
+            title: "payment Result Process",
+            text: "PENDING",
+          });
+          }
+        else {
           notify({
             type: "error",
             title: "payment Result Process",

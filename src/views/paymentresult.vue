@@ -6,7 +6,6 @@
       <h3>Ödeme Sonucu</h3>
       <p v-if="paymentResult">Ödeme Başarılı</p>
       <p v-else>Ödeme Başarısız</p>
-      <p>{{ paymentResult.message }}</p>
     </div>
   </div>
 </template>
@@ -51,6 +50,11 @@ export default defineComponent({
           {
             this.paymentResult = true ;
           }
+          else if(response.data.data.status =="PENDING")
+          {
+            this.paymentResult = false ;
+            console.error("PENDING!!")
+          }
         this.processing = false;
         this.resultReceived = true;
         debugger;
@@ -59,10 +63,6 @@ export default defineComponent({
         console.error("Ödeme sonucu alınamadı:", error);
         this.processing = false;
       }
-      return {
-        success: true, // Ödeme başarılı mı?
-        message: "Ödeme başarılı! Teşekkür ederiz.",
-      };
     },
   },
 });
