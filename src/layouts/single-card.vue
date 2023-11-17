@@ -2,8 +2,7 @@
   <div class="default-layout">
     <div class="content">
       <div class="header">
-        <div class="title">{{ title }}</div>
-        <div class="description">{{ description }}</div>
+          
       </div>
       <slot />
     </div>
